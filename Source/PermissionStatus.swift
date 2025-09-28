@@ -27,6 +27,7 @@ public enum PermissionStatus: String, Codable {
     case denied        = "Denied"
     case disabled      = "Disabled"
     case notDetermined = "Not Determined"
+    case limited       = "limited"
 
     init?(string: String?) {
         guard let string = string else { return nil }
