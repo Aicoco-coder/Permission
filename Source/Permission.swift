@@ -295,8 +295,9 @@ open class Permission: NSObject {
     }
 
     func callbacks(_ with: PermissionStatus) {
+        let status = self.status
         DispatchQueue.main.async {
-            self.callback?(self.status)
+            self.callback?(status)
             self.permissionSets.forEach { $0.didRequestPermission(self) }
         }
     }
